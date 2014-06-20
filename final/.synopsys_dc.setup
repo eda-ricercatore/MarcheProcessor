@@ -1,0 +1,36 @@
+# ==========================================================================
+#  University of Southern California
+#  Synopsys DesignCompiler setup file for OSU 0.18um Standard Cell Library
+#  by T.J. Kwon
+# ==========================================================================
+
+set search_path [ list . \
+                  ${synopsys_root}/libraries/syn \
+                  ${synopsys_root}/dw/sim_ver \
+                  /auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib ]
+
+set target_library { osu018_stdcells.db }
+
+set synthetic_library [list dw_foundation.sldb dw01.sldb dw02.sldb dw03.sldb \
+                            dw04.sldb dw05.sldb dw06.sldb dw07.sldb]
+
+set link_library [list * osu018_stdcells.db \
+                         dw_foundation.sldb dw01.sldb dw02.sldb dw03.sldb \
+                         dw04.sldb dw05.sldb dw06.sldb dw07.sldb]
+
+set command_log_file  "./command.log"
+set designer  ""
+set company  ""
+
+# set symbol_library  your_library.sdb 
+
+set view_command_log_file  "./view_command.log"
+
+set verilogout_no_tri "true"
+set verilogout_equation "false"
+set write_name_nets_same_as_ports true
+set verilogout_show_unconnected_pins "TRUE"
+
+set hdlin_presto_net_name_prefix "n"
+
+set alib_library_analysis_path "/auto/home-scf-06/ee577/synthesis"

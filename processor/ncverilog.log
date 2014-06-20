@@ -1,0 +1,12 @@
+ncverilog: 05.10-p004: (c) Copyright 1995-2003 Cadence Design Systems, Inc.
+TOOL:	ncverilog	05.10-p004: Started on Dec 14, 2007 at 11:32:06
+ncverilog
+	-f alu.f
+		-v
+		alu.v
+		+ncaccess+rwc
+		alutb.v
+	+gui
+ncverilog: *F,DLPAKC: Packed library for worklib is corrupt, please remove ./INCA_libs/worklib/inca.sun4v.151.pak (5 at Fri Dec 14 11:32:06 2007
+).
+TOOL:	ncverilog	05.10-p004: Exiting on Dec 14, 2007 at 11:32:06  (total: 00:00:00)

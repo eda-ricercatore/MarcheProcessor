@@ -1,0 +1,34 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : seq_detect
+Version: Y-2006.06-SP4
+Date   : Fri Nov 16 08:23:43 2007
+****************************************
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: match (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  state_reg[1]/CLK (DFFPOSX1)              0.00       0.00 r
+  state_reg[1]/Q (DFFPOSX1)                0.18       0.18 f
+  U76/Y (INVX1)                            0.06       0.24 r
+  U75/Y (NOR2X1)                           0.03       0.26 f
+  match (out)                              0.00       0.26 f
+  data arrival time                                   0.26
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

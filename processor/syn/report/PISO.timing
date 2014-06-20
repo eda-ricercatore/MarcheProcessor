@@ -1,0 +1,17 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PISO
+Version: Y-2006.06-SP4
+Date   : Fri Nov 16 08:53:25 2007
+****************************************
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+No paths.
+
+1

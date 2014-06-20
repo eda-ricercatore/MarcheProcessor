@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : regfile
+Version: Y-2006.06-SP4
+Date   : Fri Nov 16 09:00:36 2007
+****************************************
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: data_out_reg[7]
+              (rising edge-triggered flip-flop)
+  Endpoint: data_out[7]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  data_out_reg[7]/CLK (DFFPOSX1)           0.00       0.00 r
+  data_out_reg[7]/Q (DFFPOSX1)             0.16       0.16 f
+  data_out[7] (out)                        0.00       0.16 f
+  data arrival time                                   0.16
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

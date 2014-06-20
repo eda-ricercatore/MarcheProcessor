@@ -1,0 +1,39 @@
+07E00000  // wld wr31, 0 ;
+04A00001  // wld wr5, 1 ;
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+22BF0000  // wmveb wr21, wr31 ;// TEST CASE
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+0AA00002  // wst wr21, 0x02 ;
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+10000489  // wandew wr0, wr0, wr0 ; //Like a NOP
+00000000  // NOP ;
+00000000  // NOP ;
+00000000  // NOP ;
+00000000  // NOP ;
+00000000  // NOP ;
+00000000  // NOP ;
+121FF881  // wsubaw wr0, wr31, wr31 ;
+121FF881  // wsubaw wr0, wr31, wr31 ;
+121FF881  // wsubaw wr0, wr31, wr31 ;
+121FF881  // wsubaw wr0, wr31, wr31 ;
+1225FA4B  // wxoruh wr17, wr5, wr31 ;
+11F00008  // wnotab wr15, wr16 ;
+23100400  // wmveb wr24, wr16 ;
+23050500  // wmvob wr24, wr5 ;
+1265FD4A  // woroh wr19, wr5, wr31 ;
+129FFB40  // wadddh wr20, wr31, wr31 ;
+102F3815  // wsrliab wr1, wr15, 7 ;
+12BFF850  // wsllah wr21, wr31, wr31 ;
+12DFC016  // wsraab wr22, wr31, wr24 ;
+12FFC094  // wsrlaw wr23, wr31, wr24 ;
+133F1011  // wslliab wr25, wr31, 2 ;
+135F0857  // wsraiah wr26, wr31, 1 ;
+13FFF80A  // worab wr31, wr31, wr31 ;
+13FFF80A  // worab wr31, wr31, wr31 ;
+13FFF80A  // worab wr31, wr31, wr31 ;
+13FFF80A  // worab wr31, wr31, wr31 ;

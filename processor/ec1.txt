@@ -1,0 +1,41 @@
+ncsim>  source /usr/usc/cadence/2005/LDV51/tools/inca/files/ncsimrc
+ncsim>  database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim>  probe -create -shm tb_pipeline.b tb_pipeline.c tb_pipeline.clk tb_pipeline.cx tb_pipeline.e tb_pipeline.err tb_pipeline.q tb_pipeline.qx tb_pipeline.r_b tb_pipeline.r_c tb_pipeline.r_e tb_pipeline.r_qx tb_pipeline.rb tb_pipeline.reset tb_pipeline.rr_b tb_pipeline.rr_e
+Created probe 1
+ncsim>  run
+ << Starting the simulation >>
+   x<< Displaying q[10:0] >>
+   x<< Displaying qx[10:0] >>
+   x<< Displaying rb[10:0] >>
+   x<< Displaying q[10:0] >>
+   x<< Displaying qx[10:0] >>
+   x<< Displaying rb[10:0] >>
+   x<< Displaying q[10:0] >>
+   x<< Displaying qx[10:0] >>
+   x<< Displaying rb[10:0] >>
+1316<< Displaying q[10:0] >>
+1316<< Displaying qx[10:0] >>
+1316<< Displaying rb[10:0] >>
+1545<< Displaying q[10:0] >>
+1544<< Displaying qx[10:0] >>
+1545<< Displaying rb[10:0] >>
+ 781<< Displaying q[10:0] >>
+ 525<< Displaying qx[10:0] >>
+ 781<< Displaying rb[10:0] >>
+1125<< Displaying q[10:0] >>
+1125<< Displaying qx[10:0] >>
+1125<< Displaying rb[10:0] >>
+ 769<< Displaying q[10:0] >>
+ 513<< Displaying qx[10:0] >>
+ 769<< Displaying rb[10:0] >>
+ 374<< Displaying q[10:0] >>
+ 118<< Displaying qx[10:0] >>
+ 374<< Displaying rb[10:0] >>
+2029<< Displaying q[10:0] >>
+1901<< Displaying qx[10:0] >>
+2029<< Displaying rb[10:0] >>
+ << Finishing the simulation >>
+Simulation complete via $finish(1) at time 500 NS + 0
+./pipelinedectb.v:279 		$finish;
+ncsim>  

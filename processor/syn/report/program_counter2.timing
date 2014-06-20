@@ -1,0 +1,33 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : program_counter2
+Version: Y-2006.06-SP4
+Date   : Tue Nov 27 00:51:29 2007
+****************************************
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: next_pc_reg[29]
+              (rising edge-triggered flip-flop)
+  Endpoint: next_pc[29]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  next_pc_reg[29]/CLK (DFFPOSX1)           0.00       0.00 r
+  next_pc_reg[29]/Q (DFFPOSX1)             0.21       0.21 f
+  next_pc[29] (out)                        0.00       0.21 f
+  data arrival time                                   0.21
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

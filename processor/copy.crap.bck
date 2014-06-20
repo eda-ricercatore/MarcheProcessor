@@ -1,0 +1,53 @@
+
+			// ======================================================
+			
+			// SLL instruction << mv to LSB << bit 127
+			`aluwsll:
+			begin
+				case(ctrl_ww)
+					`w8:	// aluwsll AND `aa AND `w8
+					begin
+						result[0:7]<=reg_A[0:7]>>reg_B[5:7];
+						result[8:15]<=reg_A[8:15]>>reg_B[13:15];
+						result[16:23]<=reg_A[16:23]>>reg_B[21:23];
+						result[24:31]<=reg_A[24:31]>>reg_B[29:31];
+						result[32:39]<=reg_A[32:39]>>reg_B[37:39];
+						result[40:47]<=reg_A[40:47]>>reg_B[45:47];
+						result[48:55]<=reg_A[48:55]>>reg_B[53:55];
+						result[56:63]<=reg_A[56:63]>>reg_B[61:63];
+						result[64:71]<=reg_A[64:71]>>reg_B[69:71];
+						result[72:79]<=reg_A[72:79]>>reg_B[77:79];
+						result[80:87]<=reg_A[80:87]>>reg_B[85:87];
+						result[88:95]<=reg_A[88:95]>>reg_B[93:95];
+						result[96:103]<=reg_A[96:103]>>reg_B[101:103];
+						result[104:111]<=reg_A[104:111]>>reg_B[109:111];
+						result[112:119]<=reg_A[112:119]>>reg_B[117:119];
+						result[120:127]<=reg_A[120:127]>>reg_B[125:127];
+					end
+		
+					`w16:	// aluwsll AND `aa AND `w16
+					begin
+						result[0:15]<=reg_A[0:15]>>reg_B[12:15];
+						result[16:31]<=reg_A[16:31]>>reg_B[28:31];
+						result[32:47]<=reg_A[32:47]>>reg_B[44:47];
+						result[48:63]<=reg_A[48:63]>>reg_B[60:63];
+						result[64:79]<=reg_A[64:79]>>reg_B[76:79];
+						result[80:95]<=reg_A[80:95]>>reg_B[92:95];
+						result[96:111]<=reg_A[96:111]>>reg_B[108:111];
+						result[112:127]<=reg_A[112:127]>>reg_B[124:127];
+					end
+		
+					`w32:	// aluwsll AND `aa AND `w32
+					begin
+						result[0:31]<=reg_A[0:31]>>reg_B[27:31];
+						result[32:63]<=reg_A[32:63]>>reg_B[59:63];
+						result[64:95]<=reg_A[64:95]>>reg_B[91:95];
+						result[96:127]<=reg_A[96:127]>>reg_B[123:127];
+					end
+					
+					default:	// aluwsll AND `aa AND Default
+					begin
+						result<=128'd0;
+					end
+				endcase
+			end

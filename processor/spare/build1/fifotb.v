@@ -1,0 +1,341 @@
+`timescale 1ns/10ps
+/**
+ * `timescale time_unit base / precision base
+ *
+ * -Specifies the time units and precision for delays:
+ * -time_unit is the amount of time a delay of 1 represents.
+ *	The time unit must be 1 10 or 100
+ * -base is the time base for each unit, ranging from seconds
+ *	to femtoseconds, and must be: s ms us ns ps or fs
+ * -precision and base represent how many decimal points of
+ *	precision to use relative to the time units.
+ */
+
+/**
+ * This is written by Zhiyang Ong -student number 6004919412-
+ * for EE577b Homework 4, Question 5
+ */
+
+// Testbench for behavioral model for the circular FIFO
+
+
+// Import the modules that will be tested for in this testbench
+`include "fifo.v"
+
+// IMPORTANT: To run this, try: ncverilog -f fifo.f +gui
+module tb_fifo();
+	/**
+	 * Depth = number of rows for the register file
+	 *
+	 * The construct base**exponent is not synthesizable for our
+	 * tool and technology library set up. It should be with the latest
+	 * version of Verilog, Verilog 2005
+	 */
+	parameter DEPTH = 8;			// DEPTH = 2^DEPTH_P2 = 2^3
+	// Width of the register file
+	parameter WIDTH = 8;
+	
+	
+	
+	
+	
+	
+	
+	// ============================================================
+	/**
+	 * Declare signal types for testbench to drive and monitor
+	 * signals during the simulation of the FIFO queue
+	 *
+	 * The reg data type holds a value until a new value is driven
+	 * onto it in an "initial" or "always" block. It can only be
+	 * assigned a value in an "always" or "initial" block, and is
+	 * used to apply stimulus to the inputs of the DUT.
+	 *
+	 * The wire type is a passive data type that holds a value driven
+	 * onto it by a port, assign statement or reg type. Wires cannot be
+	 * assigned values inside "always" and "initial" blocks. They can
+	 * be used to hold the values of the DUT's outputs
+	 */
+	
+	// Declare "wire" signals: outputs from the DUT
+	// data_out & emp & full_cb output signals
+	wire [7:0] d_out;
+	wire empty_cb,full_cb;
+	
+	
+	
+	
+	
+	
+	
+	// ============================================================
+	
+	// Declare "reg" signals: inputs to the DUT
+	// push, pop, reset, & clk
+	reg push_cb,pop_cb,rst,clock;
+	// data_in
+	reg [WIDTH-1:0] d_in;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// ============================================================
+	// Counter for loop to enumerate all the values of r
+	//integer count;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// ============================================================
+	
+	/**
+	 * Each sequential control block, such as the initial or always
+	 * block, will execute concurrently in every module at the start
+	 * of the simulation
+	 */
+	always begin
+    	// Clock frequency is arbitrarily chosen; Period=10ns
+    	#5 clock = 0;
+    	#5 clock = 1;
+    end	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// ============================================================
+	
+	/**
+	 * Instantiate an instance of SIPO() so that
+	 * inputs can be passed to the Device Under Test (DUT)
+	 * Given instance name is "xor1model"
+	 */
+	FIFO fifo_cb (
+		// instance_name(signal name),
+		// Signal name can be the same as the instance name
+		d_out,empty_cb,full_cb,d_in,push_cb,pop_cb,rst,clock);
+	
+	
+	
+	
+	
+	
+	// ============================================================
+	
+	/**
+	 * Initial block start executing sequentially @ t=0
+	 * If and when a delay is encountered, the execution of this block
+	 * pauses or waits until the delay time has passed, before resuming
+	 * execution
+	 *
+	 * Each intial or always block executes concurrently; that is,
+	 * multiple "always" or "initial" blocks will execute simultaneously
+	 *
+	 * E.g.
+	 * always
+	 * begin
+	 *		#10 clk_50 = ~clk_50; // Invert clock signal every 10 ns
+	 *		// Clock signal has a period of 20 ns or 50 MHz
+	 * end
+	 */
+	initial
+	begin
+		// "$time" indicates the current time in the simulation
+		$display($time, " << Starting the simulation >>");
+		// @ t=0; reset the sequence detector
+		rst=1'd1;						// Reset
+		push_cb=1'd0;
+		pop_cb=1'd0;
+		d_in=8'd45;
+		
+		
+										// Push...
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd0;
+		d_in=8'd231;
+		
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd179;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd37;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd174;
+		
+		
+										// Pop
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd1;
+		d_in=8'd45;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd1;
+		d_in=8'd145;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd1;
+		d_in=8'd245;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd1;
+		d_in=8'd24;						// Empty
+		
+		
+		
+										// Pop more
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd1;
+		d_in=8'd245;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd1;
+		d_in=8'd245;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd1;
+		d_in=8'd245;
+		
+		
+										// Push
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd179;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd235;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd39;
+		
+		
+										// Push and Pop
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd1;
+		d_in=8'd201;
+		
+		
+										// Continue pushing
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd12;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd72;
+		
+		
+										// DO NOT PUSH NOR POP
+		#10
+		rst=1'd0;
+		push_cb=1'd0;
+		pop_cb=1'd0;
+		d_in=8'd82;
+		
+		
+		
+										// Continue pushing
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd58;
+		
+		
+		#10								// FULL
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd238;
+		
+		
+		#10
+		rst=1'd0;
+		push_cb=1'd1;
+		pop_cb=1'd0;
+		d_in=8'd125;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// end simulation
+		#30
+		
+		$display($time, " << Finishing the simulation >>");
+		$finish;
+	end
+
+endmodule

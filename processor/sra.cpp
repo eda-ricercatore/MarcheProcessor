@@ -1,0 +1,261 @@
+/**
+ * This is written by Zhiyang Ong (zhiyango@usc.edu; 6004 9194 12)
+ * and Andrew Mattheisen (mattheis@usc.edu; 2134 5147 11)
+ * for EE577b Troy WideWord Processor Project
+ *
+ *
+ * SYNOPSIS:
+ * Program to create the Verilog code needed to implement the SRA
+ * (shift right arithmetic) instruction
+ * Verilog 2001 standard has the ">>>" operator to implement this
+ * instruction. However, Verilog 1995 does not have this operator.
+ * The version of Synopsys Design Compiler and Cadence NC-Verilog
+ * on the Aludra and Nunki servers at USC
+ */
+
+// Import Header files from the C++ STL
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstring>
+#include <cfloat>
+#include <exception>
+#include <float.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <iomanip>
+#include <climits>
+#include <ctype.h>
+#include <limits.h>
+
+#include <list>
+#include <iterator>
+
+
+
+
+
+
+
+using namespace std;
+
+
+
+
+void print_arith_shift(int initial_index, int num_bits) {
+	for(int i=0; i<(num_bits); i++) {
+		cout<<"\t\t\t\t\t\t\t\tresult["<<(i+initial_index)<<"]<=result[";
+		cout<<initial_index<<"];"<<endl;
+	}
+}
+
+
+
+
+
+// ============================================================================
+
+// Start of main function...
+int main() {
+	// Print out the "header"
+	cout<<"\t\t\t// ======================================================"<<endl;
+	cout<<endl;
+	cout<<"\t\t\t// SRA instruction >> mv to LSB >> bit 127"<<endl;
+	cout<<"\t\t\t`aluwsra:"<<endl;
+	cout<<"\t\t\tbegin"<<endl;
+	cout<<"\t\t\t\tcase(ctrl_ww)"<<endl;
+	cout<<"\t\t\t\t\t`w8:			// sra AND `w8"<<endl;
+	cout<<"\t\t\t\t\tbegin"<<endl;
+	cout<<"\t\t\t\t\t\tcase(reg_B[5:7])"<<endl;
+	for(int i=0; i<7; i++) {
+		cout<<"\t\t\t\t\t\t\t"<<i<<":"<<endl;
+		cout<<"\t\t\t\t\t\t\tbegin"<<endl;
+		cout<<"\t\t\t\t\t\t\t\tresult[0:7]<=reg_A[0:7]>>"<<i<<";"<<endl;
+		print_arith_shift(0,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[8:15]<=reg_A[8:15]>>"<<i<<";"<<endl;
+		print_arith_shift(8,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[16:23]<=reg_A[16:23]>>"<<i<<";"<<endl;
+		print_arith_shift(16,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[24:31]<=reg_A[24:31]>>"<<i<<";"<<endl;
+		print_arith_shift(24,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[32:39]<=reg_A[32:39]>>"<<i<<";"<<endl;
+		print_arith_shift(32,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[40:47]<=reg_A[40:47]>>"<<i<<";"<<endl;
+		print_arith_shift(40,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[48:55]<=reg_A[48:55]>>"<<i<<";"<<endl;
+		print_arith_shift(48,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[56:63]<=reg_A[56:63]>>"<<i<<";"<<endl;
+		print_arith_shift(56,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[64:71]<=reg_A[64:71]>>"<<i<<";"<<endl;
+		print_arith_shift(64,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[72:79]<=reg_A[72:79]>>"<<i<<";"<<endl;
+		print_arith_shift(72,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[80:87]<=reg_A[80:87]>>"<<i<<";"<<endl;
+		print_arith_shift(80,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[88:95]<=reg_A[88:95]>>"<<i<<";"<<endl;
+		print_arith_shift(88,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[96:103]<=reg_A[96:103]>>"<<i<<";"<<endl;
+		print_arith_shift(96,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[104:111]<=reg_A[104:111]>>"<<i<<";"<<endl;
+		print_arith_shift(104,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[112:119]<=reg_A[112:119]>>"<<i<<";"<<endl;
+		print_arith_shift(112,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[120:127]<=reg_A[120:127]>>"<<i<<";"<<endl;
+		print_arith_shift(120,i);
+		cout<<"\t\t\t\t\t\t\tend"<<endl;
+	}
+	cout<<"\t\t\t\t\t\t\tdefault:		//	sra AND `w8 && 7"<<endl;
+	cout<<"\t\t\t\t\t\t\tbegin"<<endl;
+	cout<<"\t\t\t\t\t\t\t\tresult[0:7]<=reg_A[0:7]>>"<<7<<";"<<endl;
+	print_arith_shift(0,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[8:15]<=reg_A[8:15]>>"<<7<<";"<<endl;
+	print_arith_shift(8,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[16:23]<=reg_A[16:23]>>"<<7<<";"<<endl;
+	print_arith_shift(16,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[24:31]<=reg_A[24:31]>>"<<7<<";"<<endl;
+	print_arith_shift(24,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[32:39]<=reg_A[32:39]>>"<<7<<";"<<endl;
+	print_arith_shift(32,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[40:47]<=reg_A[40:47]>>"<<7<<";"<<endl;
+	print_arith_shift(40,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[48:55]<=reg_A[48:55]>>"<<7<<";"<<endl;
+	print_arith_shift(48,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[56:63]<=reg_A[56:63]>>"<<7<<";"<<endl;
+	print_arith_shift(56,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[64:71]<=reg_A[64:71]>>"<<7<<";"<<endl;
+	print_arith_shift(64,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[72:79]<=reg_A[72:79]>>"<<7<<";"<<endl;
+	print_arith_shift(72,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[80:87]<=reg_A[80:87]>>"<<7<<";"<<endl;
+	print_arith_shift(80,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[88:95]<=reg_A[88:95]>>"<<7<<";"<<endl;
+	print_arith_shift(88,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[96:103]<=reg_A[96:103]>>"<<7<<";"<<endl;
+	print_arith_shift(96,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[104:111]<=reg_A[104:111]>>"<<7<<";"<<endl;
+	print_arith_shift(104,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[112:119]<=reg_A[112:119]>>"<<7<<";"<<endl;
+	print_arith_shift(112,7);
+	cout<<"\t\t\t\t\t\t\t\tresult[120:127]<=reg_A[120:127]>>"<<7<<";"<<endl;
+	print_arith_shift(120,7);
+	cout<<"\t\t\t\t\t\t\tend"<<endl;
+	cout<<"\t\t\t\t\t\tendcase"<<endl;
+	cout<<"\t\t\t\t\tend"<<endl;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	cout<<"\t\t\t\t\t`w16:			// sra AND `w16 "<<endl;
+	cout<<"\t\t\t\t\tbegin"<<endl;
+	cout<<"\t\t\t\t\t\tcase(reg_B[4:7])"<<endl;
+	for(int i=0; i<15; i++) {
+		cout<<"\t\t\t\t\t\t\t"<<i<<":"<<endl;
+		cout<<"\t\t\t\t\t\t\tbegin"<<endl;
+		cout<<"\t\t\t\t\t\t\t\tresult[0:15]<=reg_A[0:15]>>"<<i<<";"<<endl;
+		print_arith_shift(0,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[16:31]<=reg_A[16:31]>>"<<i<<";"<<endl;
+		print_arith_shift(16,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[32:47]<=reg_A[32:47]>>"<<i<<";"<<endl;
+		print_arith_shift(32,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[48:63]<=reg_A[48:63]>>"<<i<<";"<<endl;
+		print_arith_shift(48,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[64:79]<=reg_A[64:79]>>"<<i<<";"<<endl;
+		print_arith_shift(64,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[80:95]<=reg_A[80:95]>>"<<i<<";"<<endl;
+		print_arith_shift(80,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[96:111]<=reg_A[96:111]>>"<<i<<";"<<endl;
+		print_arith_shift(96,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[112:127]<=reg_A[112:127]>>"<<i<<";"<<endl;
+		print_arith_shift(112,i);
+		cout<<"\t\t\t\t\t\t\tend"<<endl;
+	}
+	cout<<"\t\t\t\t\t\t\tdefault:			// sra AND `w16 && 15"<<endl;
+	cout<<"\t\t\t\t\t\t\tbegin"<<endl;
+	cout<<"\t\t\t\t\t\t\t\tresult[0:15]<=reg_A[0:15]>>"<<15<<";"<<endl;
+	print_arith_shift(0,15);
+	cout<<"\t\t\t\t\t\t\t\tresult[16:31]<=reg_A[16:31]>>"<<15<<";"<<endl;
+	print_arith_shift(16,15);
+	cout<<"\t\t\t\t\t\t\t\tresult[32:47]<=reg_A[32:47]>>"<<15<<";"<<endl;
+	print_arith_shift(32,15);
+	cout<<"\t\t\t\t\t\t\t\tresult[48:63]<=reg_A[48:63]>>"<<15<<";"<<endl;
+	print_arith_shift(48,15);
+	cout<<"\t\t\t\t\t\t\t\tresult[64:79]<=reg_A[64:79]>>"<<15<<";"<<endl;
+	print_arith_shift(64,15);
+	cout<<"\t\t\t\t\t\t\t\tresult[80:95]<=reg_A[80:95]>>"<<15<<";"<<endl;
+	print_arith_shift(80,15);
+	cout<<"\t\t\t\t\t\t\t\tresult[96:111]<=reg_A[96:111]>>"<<15<<";"<<endl;
+	print_arith_shift(96,15);
+	cout<<"\t\t\t\t\t\t\t\tresult[112:127]<=reg_A[112:127]>>"<<15<<";"<<endl;
+	print_arith_shift(112,15);
+	cout<<"\t\t\t\t\t\t\tend"<<endl;
+	cout<<"\t\t\t\t\t\tendcase"<<endl;
+	cout<<"\t\t\t\t\tend"<<endl;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	cout<<"\t\t\t\t\tdefault:				// sra AND `w32:"<<endl;
+	cout<<"\t\t\t\t\tbegin"<<endl;
+	cout<<"\t\t\t\t\t\tcase(reg_B[5:7])"<<endl;
+	for(int i=0; i<31; i++) {
+		cout<<"\t\t\t\t\t\t\t"<<i<<":"<<endl;
+		cout<<"\t\t\t\t\t\t\tbegin"<<endl;
+		cout<<"\t\t\t\t\t\t\t\tresult[0:31]<=reg_A[0:31]>>"<<i<<";"<<endl;
+		print_arith_shift(0,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[32:63]<=reg_A[32:63]>>"<<i<<";"<<endl;
+		print_arith_shift(32,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[64:95]<=reg_A[64:95]>>"<<i<<";"<<endl;
+		print_arith_shift(64,i);
+		cout<<"\t\t\t\t\t\t\t\tresult[96:127]<=reg_A[96:127]>>"<<i<<";"<<endl;
+		print_arith_shift(96,i);
+		cout<<"\t\t\t\t\t\t\tend"<<endl;
+	}
+	cout<<"\t\t\t\t\t\t\tdefault:			// sra AND `w32 && 31"<<endl;
+	cout<<"\t\t\t\t\t\t\tbegin"<<endl;
+	cout<<"\t\t\t\t\t\t\t\tresult[0:31]<=reg_A[0:31]>>"<<31<<";"<<endl;
+	print_arith_shift(0,31);
+	cout<<"\t\t\t\t\t\t\t\tresult[32:63]<=reg_A[32:63]>>"<<31<<";"<<endl;
+	print_arith_shift(32,31);
+	cout<<"\t\t\t\t\t\t\t\tresult[64:95]<=reg_A[64:95]>>"<<31<<";"<<endl;
+	print_arith_shift(64,31);
+	cout<<"\t\t\t\t\t\t\t\tresult[96:127]<=reg_A[96:127]>>"<<31<<";"<<endl;
+	print_arith_shift(96,31);
+	cout<<"\t\t\t\t\t\t\tend"<<endl;
+	cout<<"\t\t\t\t\t\tendcase"<<endl;
+	cout<<"\t\t\t\t\tend"<<endl;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	cout<<"\t\t\t\tendcase"<<endl;
+	cout<<"\t\t\tend"<<endl;
+
+	// End of main function...
+	return 0;
+}

@@ -1,0 +1,40 @@
+Loading db file '/auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : shift
+Version: Y-2006.06-SP4
+Date   : Fri Dec 14 10:54:49 2007
+****************************************
+
+
+Library(s) Used:
+
+    osu018_stdcells (File: /auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 167.1336 mW   (38%)
+  Net Switching Power  = 267.5961 mW   (62%)
+                         ---------
+Total Dynamic Power    = 434.7297 mW  (100%)
+
+Cell Leakage Power     = 711.5905 nW
+
+1

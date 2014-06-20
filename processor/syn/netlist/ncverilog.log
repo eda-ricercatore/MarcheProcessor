@@ -1,0 +1,169 @@
+ncverilog: 05.10-p004: (c) Copyright 1995-2003 Cadence Design Systems, Inc.
+TOOL:	ncverilog	05.10-p004: Started on Dec 10, 2007 at 19:07:44
+ncverilog
+	-f mult.f
+		-v
+		mult.v
+		+ncaccess+rwc
+		multtb.v
+	+gui
+ncvlog: *W,LIBNOF: Library file or directory "mult.v" does not exist.
+file: multtb.v
+	module worklib.alu_DW_mult_uns_1:v
+		errors: 0, warnings: 0
+	module worklib.alu_DW_mult_uns_2:v
+		errors: 0, warnings: 0
+	module worklib.alu_DW_mult_uns_3:v
+		errors: 0, warnings: 0
+	module worklib.alu_DW_mult_uns_4:v
+		errors: 0, warnings: 0
+	module worklib.alu_DW_mult_uns_5:v
+		errors: 0, warnings: 0
+	module worklib.alu_DW_mult_uns_6:v
+		errors: 0, warnings: 0
+	module worklib.alu_DW_mult_uns_7:v
+		errors: 0, warnings: 0
+	module worklib.alu_DW_mult_uns_8:v
+		errors: 0, warnings: 0
+	module worklib.alu:v
+		errors: 0, warnings: 0
+	module worklib.AND2X1:v
+		errors: 0, warnings: 0
+	module worklib.AND2X2:v
+		errors: 0, warnings: 0
+	module worklib.AOI21X1:v
+		errors: 0, warnings: 0
+	module worklib.AOI22X1:v
+		errors: 0, warnings: 0
+	module worklib.BUFX2:v
+		errors: 0, warnings: 0
+	module worklib.BUFX4:v
+		errors: 0, warnings: 0
+	module worklib.CLKBUF1:v
+		errors: 0, warnings: 0
+	module worklib.CLKBUF2:v
+		errors: 0, warnings: 0
+	module worklib.CLKBUF3:v
+		errors: 0, warnings: 0
+	module worklib.DFFNEGX1:v
+		errors: 0, warnings: 0
+	module worklib.DFFPOSX1:v
+		errors: 0, warnings: 0
+	module worklib.DFFSR:v
+		errors: 0, warnings: 0
+	module worklib.FAX1:v
+		errors: 0, warnings: 0
+	module worklib.HAX1:v
+		errors: 0, warnings: 0
+	module worklib.INVX1:v
+		errors: 0, warnings: 0
+	module worklib.INVX2:v
+		errors: 0, warnings: 0
+	module worklib.INVX4:v
+		errors: 0, warnings: 0
+	module worklib.INVX8:v
+		errors: 0, warnings: 0
+	module worklib.LATCH:v
+		errors: 0, warnings: 0
+	module worklib.MUX2X1:v
+		errors: 0, warnings: 0
+	module worklib.NAND2X1:v
+		errors: 0, warnings: 0
+	module worklib.NAND3X1:v
+		errors: 0, warnings: 0
+	module worklib.NOR2X1:v
+		errors: 0, warnings: 0
+	module worklib.NOR3X1:v
+		errors: 0, warnings: 0
+	module worklib.OAI21X1:v
+		errors: 0, warnings: 0
+	module worklib.OAI22X1:v
+		errors: 0, warnings: 0
+	module worklib.OR2X1:v
+		errors: 0, warnings: 0
+	module worklib.OR2X2:v
+		errors: 0, warnings: 0
+	module worklib.TBUFX1:v
+		errors: 0, warnings: 0
+	module worklib.TBUFX2:v
+		errors: 0, warnings: 0
+	module worklib.XNOR2X1:v
+		errors: 0, warnings: 0
+	module worklib.XOR2X1:v
+		errors: 0, warnings: 0
+	primitive worklib.udp_dff:v
+		errors: 0, warnings: 0
+	primitive worklib.udp_tlat:v
+		errors: 0, warnings: 0
+	primitive worklib.udp_rslat:v
+		errors: 0, warnings: 0
+	primitive worklib.udp_mux2:v
+		errors: 0, warnings: 0
+	module worklib.tb_alu:v
+		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+ncelab: *W,CUSUMC: Unrecognized MTM control "FROM_MTM" in SDF System Task.
+		$sdf_annotate("../sdf/alu.sdf",a_l_u,"TYPICAL", "1.0:1.0:1.0", "FROM_MTM");
+		            |
+ncelab: *W,CUSSTI (./multtb.v,125|14): This SDF System Task will be Ignored..
+     $hold (negedge D, posedge CLK, thold_negedge$D$CLK,  NOTIFIER);
+                                                      |
+ncelab: *W,CUNGL1 (/auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.v,298|54): Negative timing check limit not allowed in a 1 limit timing check, setting to 0 in instance (DFFPOSX1).
+     $recovery(posedge R, posedge CLK &&& \D&S , trec$R$CLK, NOTIFIER);
+                                                          |
+ncelab: *W,CUNGL1 (/auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.v,361|58): Negative timing check limit not allowed in a 1 limit timing check, setting to 0 in instance (DFFSR).
+     $hold (negedge D, negedge CLK, thold_negedge$D$CLK,  NOTIFIER);
+                                                      |
+ncelab: *W,CUNGL1 (/auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.v,573|54): Negative timing check limit not allowed in a 1 limit timing check, setting to 0 in instance (LATCH).
+     $hold (posedge D, negedge CLK, thold_posedge$D$CLK,  NOTIFIER);
+                                                      |
+ncelab: *W,CUNGL1 (/auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.v,575|54): Negative timing check limit not allowed in a 1 limit timing check, setting to 0 in instance (LATCH).
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.DFFNEGX1:v <0x100a0927>
+			streams:   1, words:    29
+		worklib.DFFPOSX1:v <0x704955ea>
+			streams:   1, words:    29
+		worklib.DFFSR:v <0x79ee6db9>
+			streams:   1, words:    29
+		worklib.LATCH:v <0x776fddba>
+			streams:   1, words:    29
+		worklib.alu:v <0x16a28d2e>
+			streams:   0, words:     0
+		worklib.tb_alu:v <0x4a450f6d>
+			streams:   5, words:  1328
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                3757      42
+		UDPs:                     68       4
+		Primitives:            11566       6
+		Timing outputs:         4563      34
+		Registers:                 9      12
+		Scalar wires:           4597       -
+		Expanded wires:          263       4
+		Initial blocks:            1       1
+		Pseudo assignments:        8       8
+		Timing checks:            31      13
+		Simulation timescale:   10ps
+	Writing initial simulation snapshot: worklib.AND2X1:v
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> source /usr/usc/cadence/2005/LDV51/tools/inca/files/ncsimrc
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm tb_alu.a_op tb_alu.c_ww tb_alu.e_r tb_alu.r_A tb_alu.r_B tb_alu.res
+Created probe 1
+ncsim> run
+                   0 << Starting the simulation >>
+                  60 << Finishing the simulation >>
+Simulation complete via $finish(1) at time 60 NS + 0
+./multtb.v:178 		$finish;
+ncsim> ^C
+ncsim> exit
+TOOL:	ncverilog	05.10-p004: Exiting on Dec 10, 2007 at 19:09:51  (total: 00:02:07)

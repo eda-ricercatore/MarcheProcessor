@@ -1,0 +1,5 @@
+Warning: In design 'alu', cell 'U22' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'U19' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'U27' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'U24' does not drive any nets. (LINT-1)
+1

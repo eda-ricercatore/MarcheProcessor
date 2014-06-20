@@ -1,0 +1,3 @@
+-VFILE
+cpu.v
+cpu_tb.v

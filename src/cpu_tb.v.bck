@@ -1,0 +1,115 @@
+//////////////////////////////////////////////////////////
+// Filename        : cpu_tb.v
+// Description     : Troy Wide Word Processor Testbench
+// Author          : Dr. Rashed Z. Bhatti
+// Created On      : Thu Nov 29 02:35:07 2007
+// Last Modified By: .
+// Last Modified On: .
+// Update Count    : 0
+//////////////////////////////////////////////////////////
+`timescale 1ns/10ps
+// Define the clock cycle
+`define CYCLE_TIME 5
+
+// include files
+`include "cpu.syn.v"
+`include "dmem.v"
+`include "imem.v"
+`include "/auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.v"
+
+
+// This testbench instantiates the following modules:
+// a. 128 bit Troy Word Wide Processor as CPU, 
+// b. 256 X 32 bit word Instruction memory
+// c. 256 X 128 bit word Data memory
+
+
+module cpu_tb;
+reg Clk, Reset;
+wire [0:31] ProgramCounter;
+wire [0:31] Instruction;
+wire [0:20] MemAddr;
+wire [0:127] DataIn, DataOut;
+
+   integer 	 dmem_dump_file; // The channel descriptor for reg file final dump
+   integer 	 i;              // loop control variable
+   integer 	 cycle_number;
+
+///****************************Module Instantiations****************************
+// Instruction Memory Instance
+imem IM(
+         .addr       (ProgramCounter[22:29]), // only 8 bits are used in this project
+         .dataOut    (Instruction)
+         );
+
+// CPU Instance
+cpu TROY (
+        .clk          (Clk), 
+        .reset        (Reset), 
+        .instruction  (Instruction),    // 32 bit instruction
+        .pc           (ProgramCounter), // 32 bit program counter
+        .dataIn       (DataIn),         // 128 bit data from dmem
+        .dataOut      (DataOut),        // 128 bit data to dmem
+        .memAddr      (MemAddr),        // 21 bit immediate address, only 8 bits are used
+        .memWrEn      (MemWrEn),        // dmem write enable
+        .memEn        (MemEn)           // dmeme enable (to avoid spurious reads)
+        );
+
+//Data Memory Instance
+dmem DMEM (
+             .clk	   (Clk),
+             .memAddr   (MemAddr[13:20]),  // 8 bit memory address
+             .dataIn    (DataOut),         // 128 bit data to dmem
+             .wrEn      (MemWrEn),         // dmem write enable
+             .memEn     (MemEn),           // dmeme enable (to avoid spurious reads)
+             .dataOut   (DataIn)           // 128 bit data from dmem
+            );
+
+
+///****************************Module Instantiations Ends****************************
+
+   initial
+     begin
+	 	$sdf_annotate("../sdf/cpu.sdf",TOY,"TYPICAL","1.0:1.0:1.0","FROM_MTM");
+		
+	 
+		$readmemh("imem.fill", IM.mem);     // loading instruction memory
+		$readmemh("dmem.fill", DMEM.mem);   // loading data memory
+		Clk <= 0;                             // initialize Clock
+		Reset <= 1'b1;                        // reset the CPU 
+		repeat(5) @(negedge Clk);              // wait for 5 clock cycles
+		Reset <= 1'b0;                        // de-activate reset signal after 5ns
+
+		// Convention for the last instruction
+		// We would have a last instruction NOP  => 32'h00000000
+		wait (Instruction == 32'h00000000);
+		// Let us see how much did you stall
+		$display("The program completed in %d cycles", cycle_number);
+		// Let us now flush the pipe line
+		repeat(5) @(negedge Clk); 
+		// Open file for output
+		dmem_dump_file = $fopen("dmem.dump"); // assigning the channel descriptor for output file
+		// Let us now dump first 128 locations of the data memory now
+		for (i=0; i<128; i=i+1)
+		  begin
+			 $fdisplay(dmem_dump_file, "Memory location #%d : %h ", i, DMEM.mem[i]);
+  		  end
+		$fdisplay(dmem_dump_file, "\nNumber of execution cycles = %d", cycle_number);
+		$fclose(dmem_dump_file);
+		$stop;
+	 end // initial begin
+   
+   // Clock Generation
+   always #(`CYCLE_TIME / 2) Clk <= ~Clk;
+   
+   //************************** Cycle Counter *****************************************
+   always @ (posedge Clk)
+	 begin
+		if (Reset)
+		  cycle_number <= 0;
+		else
+		  cycle_number <= cycle_number + 1;
+	 end
+
+
+endmodule

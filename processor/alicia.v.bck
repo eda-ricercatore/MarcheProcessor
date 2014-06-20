@@ -1,0 +1,90 @@
+`timescale 1ns/10ps
+/**
+ * `timescale time_unit base / precision base
+ *
+ * -Specifies the time units and precision for delays:
+ * -time_unit is the amount of time a delay of 1 represents.
+ *	The time unit must be 1 10 or 100
+ * -base is the time base for each unit, ranging from seconds
+ *	to femtoseconds, and must be: s ms us ns ps or fs
+ * -precision and base represent how many decimal points of
+ *	precision to use relative to the time units.
+ */
+
+/**
+ * This is written by Zhiyang Ong -student number 6004919412-
+ * for EE577b Homework 4, Question 5
+ */
+
+// Testbench for behavioral model for the circular FIFO
+
+
+// Import the modules that will be tested for in this testbench
+
+
+// IMPORTANT: To run this, try: ncverilog -f fifo.f +gui
+module tb_fifo();
+	
+	reg a;
+	reg b;
+	reg c;
+	reg d;
+	reg e;
+	reg [1:0] opA;
+	reg opB;
+	reg opC;
+	reg [0:7] alicia;
+	reg [0:7] lowery;
+	reg [0:7] patrice;
+	
+	
+	initial
+	begin
+		
+		opA=1;
+		opB=0;
+		opC=1;
+		//if(opA==opB) ? (b==1):((opC==opB)?(d==1):(e==0)
+//		opA = (opB==opC) ? 2'd0 : (opA==opB) ? 2'd1:2'd2;
+		
+		$display("opA",opA);
+		//2
+		
+		
+		#10
+		opA=3;
+		opB=2;
+		opC=0;
+		opA = (opB>opC) ? 2'd0 : (opA==opB) ? 2'd1 : 2'd2;
+		$display("opA",opA);
+		//0
+		
+		#10
+		opA=2;
+		opB=2;
+		opC=3;
+		opA = (opB<opC) ? 2'd0 : (opA==opB) ? 2'd1 : 2'd2;
+		$display("opA",opA);
+		//1
+		
+		#20
+		alicia=8'b10110101;
+		lowery=8'b00000100;
+		patrice={lowery[2:0],{alicia}};
+		
+		#20
+		alicia=8'b10110101;
+		lowery=8'b00000100;
+		patrice={{alicia},lowery[2:0]};
+		
+		#20
+		alicia=8'b11010100;
+		$display("a[0]",alicia[0],"a[6]",alicia[6]);
+		// end simulation
+		#30
+		
+		$display($time, " << Finishing the simulation >>");
+		$finish;
+	end
+
+endmodule

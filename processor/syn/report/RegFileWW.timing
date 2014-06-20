@@ -1,0 +1,36 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RegFileWW' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RegFileWW
+Version: Y-2006.06-SP4
+Date   : Tue Nov 27 15:21:07 2007
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: rd1data_reg[127]
+              (rising edge-triggered flip-flop)
+  Endpoint: rd1data[127]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  rd1data_reg[127]/CLK (DFFPOSX1)          0.00 #     0.00 r
+  rd1data_reg[127]/Q (DFFPOSX1)            0.15       0.15 f
+  rd1data[127] (out)                       0.00       0.15 f
+  data arrival time                                   0.15
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

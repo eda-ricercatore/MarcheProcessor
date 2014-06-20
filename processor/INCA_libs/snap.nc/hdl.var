@@ -1,0 +1,3 @@
+define NCSIMRC	( $CDS_INST_DIR/tools/inca/files/ncsimrc, ~/.ncsimrc )
+include ../hdl.var
+define SNAPSHOT worklib.tb_alu:v

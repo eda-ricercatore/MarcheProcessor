@@ -1,0 +1,52 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : shift
+Version: Y-2006.06-SP4
+Date   : Fri Dec 14 10:54:24 2007
+****************************************
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: reg_B[3] (input port)
+  Endpoint: result[31] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  reg_B[3] (in)                            0.00       0.00 r
+  U34770/Y (INVX1)                         0.71       0.71 f
+  U34769/Y (NAND2X1)                       0.38       1.09 r
+  U20543/Y (INVX2)                         0.70       1.79 f
+  U34757/Y (NAND2X1)                       0.76       2.55 r
+  U34715/Y (INVX1)                         0.60       3.16 f
+  U34701/Y (NAND2X1)                       1.09       4.24 r
+  U34700/Y (INVX1)                         1.33       5.57 f
+  U34699/Y (NAND2X1)                       1.03       6.60 r
+  U20411/Y (INVX4)                         0.81       7.41 f
+  U20410/Y (INVX4)                         0.94       8.35 r
+  U34635/Y (OAI21X1)                       0.22       8.57 f
+  U31396/Y (NAND2X1)                       0.31       8.88 r
+  U30788/Y (INVX1)                         0.25       9.13 f
+  U28445/Y (NOR2X1)                        0.08       9.21 r
+  U28444/Y (OAI21X1)                       0.09       9.30 f
+  U28389/Y (INVX1)                         0.11       9.41 r
+  U28388/Y (OAI21X1)                       0.08       9.50 f
+  U28387/Y (AOI22X1)                       0.11       9.60 r
+  U28386/Y (OAI21X1)                       0.06       9.66 f
+  U28385/Y (NOR2X1)                        0.09       9.74 r
+  U28322/Y (NAND3X1)                       0.03       9.77 f
+  result[31] (out)                         0.00       9.77 f
+  data arrival time                                   9.77
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

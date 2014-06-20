@@ -1,0 +1,36 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : regfile
+Version: Y-2006.06-SP4
+Date   : Fri Nov 16 09:00:37 2007
+****************************************
+
+
+Library(s) Used:
+
+    osu018_stdcells (File: /auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   4.2928 mW   (58%)
+  Net Switching Power  =   3.1229 mW   (42%)
+                         ---------
+Total Dynamic Power    =   7.4157 mW  (100%)
+
+Cell Leakage Power     =  23.1369 nW
+
+1

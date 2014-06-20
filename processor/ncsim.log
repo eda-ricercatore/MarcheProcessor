@@ -1,0 +1,3 @@
+ncsim: 05.10-p004: (c) Copyright 1995-2003 Cadence Design Systems, Inc.
+ncsim: *W,DLDEFM: Unable to find 'cds.lib' or 'hdl.var', run in default mode.
+ncsim: *F,NOSNAP: snapshot 'alicia.v' does not exist in the libraries.

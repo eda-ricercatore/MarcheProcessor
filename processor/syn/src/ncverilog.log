@@ -1,0 +1,54 @@
+ncverilog: 05.10-p004: (c) Copyright 1995-2003 Cadence Design Systems, Inc.
+TOOL:	ncverilog	05.10-p004: Started on Nov 27, 2007 at 14:55:00
+ncverilog
+	-f prog_counter2.f
+		-v
+		prog_counter2a.v
+		+ncaccess+rwc
+		prog_counter2tb.v
+	+gui
+file: prog_counter2tb.v
+	module worklib.program_counter2a:v
+		errors: 0, warnings: 0
+	module worklib.tb_prog_counter2a:v
+		errors: 0, warnings: 0
+ncvlog: *W,LIBNOU: Library "prog_counter2a.v" given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.program_counter2a:v <0x1362b02a>
+			streams:   3, words:   158
+		worklib.tb_prog_counter2a:v <0x10747c77>
+			streams:   4, words:   498
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Registers:                4       4
+		Scalar wires:             2       -
+		Vectored wires:           1       -
+		Always blocks:            2       2
+		Initial blocks:           1       1
+		Pseudo assignments:       2       2
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.tb_prog_counter2a:v
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> source /usr/usc/cadence/2005/LDV51/tools/inca/files/ncsimrc
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm tb_prog_counter2a.clock tb_prog_counter2a.count tb_prog_counter2a.n_pc tb_prog_counter2a.reset
+Created probe 1
+ncsim> run
+                   0 << Starting the simulation >>
+                 210 << Finishing the simulation >>
+Simulation complete via $finish(1) at time 210 NS + 0
+./prog_counter2tb.v:181 		$finish;
+ncsim> ^C
+ncsim> exit
+TOOL:	ncverilog	05.10-p004: Exiting on Nov 27, 2007 at 14:56:34  (total: 00:01:34)

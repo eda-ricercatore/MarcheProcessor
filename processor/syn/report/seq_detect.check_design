@@ -1,0 +1,9 @@
+Warning: In design 'seq_detect', cell 'U9' does not drive any nets. (LINT-1)
+Warning: In design 'seq_detect', net 'num_high[0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'seq_detect', net 'num_high[1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'seq_detect', net 'num_high[2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'seq_detect', net 'num_bits[0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'seq_detect', net 'num_bits[1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'seq_detect', net 'num_bits[2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'seq_detect', net 'num_bits[3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+1

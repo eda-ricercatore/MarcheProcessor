@@ -1,0 +1,13 @@
+(DELAYFILE
+(SDFVERSION "OVI 2.1")
+(DESIGN "SIPO")
+(DATE "Fri Nov 16 09:07:46 2007")
+(VENDOR "osu018_stdcells")
+(PROGRAM "Synopsys Design Compiler cmos")
+(VERSION "Y-2006.06-SP4")
+(DIVIDER /)
+(VOLTAGE 1.80:1.80:1.80)
+(PROCESS "typical")
+(TEMPERATURE 25.00:25.00:25.00)
+(TIMESCALE 1ns)
+)

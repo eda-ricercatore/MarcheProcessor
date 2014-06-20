@@ -1,0 +1,24 @@
+ 
+****************************************
+Report : area
+Design : shift
+Version: Y-2006.06-SP4
+Date   : Fri Dec 14 10:54:24 2007
+****************************************
+
+Library(s) Used:
+
+    osu018_stdcells (File: /auto/home-scf-06/ee577/design_pdk/osu_stdcells/lib/tsmc018/lib/osu018_stdcells.db)
+
+Number of ports:              391
+Number of nets:             14764
+Number of cells:            14547
+Number of references:          16
+
+Combinational area:       437944.000000
+Noncombinational area:       0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:          437944.000000
+Total area:                 undefined
+1

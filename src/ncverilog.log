@@ -1,0 +1,195 @@
+ncverilog: 05.10-p004: (c) Copyright 1995-2003 Cadence Design Systems, Inc.
+TOOL:	ncverilog	05.10-p004: Started on Dec 13, 2007 at 23:24:11
+ncverilog
+	-f cpu_tb.f
+		-v
+		cpu.v
+		+ncaccess+rwc
+		cpu_tb.v
+	+gui
+file: cpu_tb.v
+	module worklib.control:v
+		errors: 0, warnings: 0
+  pipe2 pipe2_1 ( .(aluop), .(aluop2), .(ww), .(ww2), .(memEn_pre), .(memEn), 
+                   |
+ncvlog: *E,EXPIDN (cpu.syn.v,115097|19): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115097, file: cpu_tb.v line 15)
+  pipe2 pipe2_1 ( .(aluop), .(aluop2), .(ww), .(ww2), .(memEn_pre), .(memEn), 
+                             |
+ncvlog: *E,EXPIDN (cpu.syn.v,115097|29): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115097, file: cpu_tb.v line 15)
+  pipe2 pipe2_1 ( .(aluop), .(aluop2), .(ww), .(ww2), .(memEn_pre), .(memEn), 
+                                        |
+ncvlog: *E,EXPIDN (cpu.syn.v,115097|40): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115097, file: cpu_tb.v line 15)
+  pipe2 pipe2_1 ( .(aluop), .(aluop2), .(ww), .(ww2), .(memEn_pre), .(memEn), 
+                                               |
+ncvlog: *E,EXPIDN (cpu.syn.v,115097|47): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115097, file: cpu_tb.v line 15)
+  pipe2 pipe2_1 ( .(aluop), .(aluop2), .(ww), .(ww2), .(memEn_pre), .(memEn), 
+                                                       |
+ncvlog: *E,EXPIDN (cpu.syn.v,115097|55): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115097, file: cpu_tb.v line 15)
+  pipe2 pipe2_1 ( .(aluop), .(aluop2), .(ww), .(ww2), .(memEn_pre), .(memEn), 
+                                                                     |
+ncvlog: *E,EXPIDN (cpu.syn.v,115097|69): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115097, file: cpu_tb.v line 15)
+        .(memWrEn_pre), .(memWrEn), .(memAddr_pre), .(memAddr), .(wbyteen), .(
+         |
+ncvlog: *E,EXPIDN (cpu.syn.v,115098|9): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115098, file: cpu_tb.v line 15)
+        .(memWrEn_pre), .(memWrEn), .(memAddr_pre), .(memAddr), .(wbyteen), .(
+                         |
+ncvlog: *E,EXPIDN (cpu.syn.v,115098|25): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115098, file: cpu_tb.v line 15)
+        .(memWrEn_pre), .(memWrEn), .(memAddr_pre), .(memAddr), .(wbyteen), .(
+                                     |
+ncvlog: *E,EXPIDN (cpu.syn.v,115098|37): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115098, file: cpu_tb.v line 15)
+        .(memWrEn_pre), .(memWrEn), .(memAddr_pre), .(memAddr), .(wbyteen), .(
+                                                     |
+ncvlog: *E,EXPIDN (cpu.syn.v,115098|53): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115098, file: cpu_tb.v line 15)
+        .(memWrEn_pre), .(memWrEn), .(memAddr_pre), .(memAddr), .(wbyteen), .(
+                                                                 |
+ncvlog: *E,EXPIDN (cpu.syn.v,115098|65): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115098, file: cpu_tb.v line 15)
+        .(memWrEn_pre), .(memWrEn), .(memAddr_pre), .(memAddr), .(wbyteen), .(
+                                                                             |
+ncvlog: *E,EXPIDN (cpu.syn.v,115098|77): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115098, file: cpu_tb.v line 15)
+        wbyteen2), .(regop[2]), .(regwren2), .(rwraddrd), .(rwraddrd2), .(
+                    |
+ncvlog: *E,EXPIDN (cpu.syn.v,115099|20): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115099, file: cpu_tb.v line 15)
+        wbyteen2), .(regop[2]), .(regwren2), .(rwraddrd), .(rwraddrd2), .(
+                                 |
+ncvlog: *E,EXPIDN (cpu.syn.v,115099|33): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115099, file: cpu_tb.v line 15)
+        wbyteen2), .(regop[2]), .(regwren2), .(rwraddrd), .(rwraddrd2), .(
+                                              |
+ncvlog: *E,EXPIDN (cpu.syn.v,115099|46): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115099, file: cpu_tb.v line 15)
+        wbyteen2), .(regop[2]), .(regwren2), .(rwraddrd), .(rwraddrd2), .(
+                                                           |
+ncvlog: *E,EXPIDN (cpu.syn.v,115099|59): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115099, file: cpu_tb.v line 15)
+        wbyteen2), .(regop[2]), .(regwren2), .(rwraddrd), .(rwraddrd2), .(
+                                                                         |
+ncvlog: *E,EXPIDN (cpu.syn.v,115099|73): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115099, file: cpu_tb.v line 15)
+        reginmuxop), .(reginmuxop2), .(aluinmuxop), .(aluinmuxop2), .({
+                      |
+ncvlog: *E,EXPIDN (cpu.syn.v,115100|22): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115100, file: cpu_tb.v line 15)
+        reginmuxop), .(reginmuxop2), .(aluinmuxop), .(aluinmuxop2), .({
+                                      |
+ncvlog: *E,EXPIDN (cpu.syn.v,115100|38): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115100, file: cpu_tb.v line 15)
+        reginmuxop), .(reginmuxop2), .(aluinmuxop), .(aluinmuxop2), .({
+                                                     |
+ncvlog: *E,EXPIDN (cpu.syn.v,115100|53): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115100, file: cpu_tb.v line 15)
+        reginmuxop), .(reginmuxop2), .(aluinmuxop), .(aluinmuxop2), .({
+                                                                     |
+ncvlog: *E,EXPIDN (cpu.syn.v,115100|69): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115100, file: cpu_tb.v line 15)
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .(immediate2), .(wrdata), .(
+                                               |
+ncvlog: *E,EXPIDN (cpu.syn.v,115111|47): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115111, file: cpu_tb.v line 15)
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .(immediate2), .(wrdata), .(
+                                                              |
+ncvlog: *E,EXPIDN (cpu.syn.v,115111|62): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115111, file: cpu_tb.v line 15)
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .(immediate2), .(wrdata), .(
+                                                                         |
+ncvlog: *E,EXPIDN (cpu.syn.v,115111|73): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115111, file: cpu_tb.v line 15)
+        hz1data), .(instruction1), .(instruction2), .(clk), .(reset) );
+                   |
+ncvlog: *E,EXPIDN (cpu.syn.v,115112|19): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115112, file: cpu_tb.v line 15)
+        hz1data), .(instruction1), .(instruction2), .(clk), .(reset) );
+                                    |
+ncvlog: *E,EXPIDN (cpu.syn.v,115112|36): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115112, file: cpu_tb.v line 15)
+        hz1data), .(instruction1), .(instruction2), .(clk), .(reset) );
+                                                     |
+ncvlog: *E,EXPIDN (cpu.syn.v,115112|53): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115112, file: cpu_tb.v line 15)
+        hz1data), .(instruction1), .(instruction2), .(clk), .(reset) );
+                                                             |
+ncvlog: *E,EXPIDN (cpu.syn.v,115112|61): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115112, file: cpu_tb.v line 15)
+  pipe3 pipe3_1 ( .(dataIn), .({SYNOPSYS_UNCONNECTED_1, SYNOPSYS_UNCONNECTED_2, 
+                   |
+ncvlog: *E,EXPIDN (cpu.syn.v,115113|19): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115113, file: cpu_tb.v line 15)
+  pipe3 pipe3_1 ( .(dataIn), .({SYNOPSYS_UNCONNECTED_1, SYNOPSYS_UNCONNECTED_2, 
+                              |
+ncvlog: *E,EXPIDN (cpu.syn.v,115113|30): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115113, file: cpu_tb.v line 15)
+        SYNOPSYS_UNCONNECTED_127, SYNOPSYS_UNCONNECTED_128}), .(wbyteen2), .(
+                                                               |
+ncvlog: *E,EXPIDN (cpu.syn.v,115175|63): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115175, file: cpu_tb.v line 15)
+        SYNOPSYS_UNCONNECTED_127, SYNOPSYS_UNCONNECTED_128}), .(wbyteen2), .(
+                                                                            |
+ncvlog: *E,EXPIDN (cpu.syn.v,115175|76): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115175, file: cpu_tb.v line 15)
+        wbyteen3), .(regwren2), .(regwren3), .(rwraddrd2), .(rwraddrd3), .(
+                    |
+ncvlog: *E,EXPIDN (cpu.syn.v,115176|20): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115176, file: cpu_tb.v line 15)
+        wbyteen3), .(regwren2), .(regwren3), .(rwraddrd2), .(rwraddrd3), .(
+                                 |
+ncvlog: *E,EXPIDN (cpu.syn.v,115176|33): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115176, file: cpu_tb.v line 15)
+        wbyteen3), .(regwren2), .(regwren3), .(rwraddrd2), .(rwraddrd3), .(
+                                              |
+ncvlog: *E,EXPIDN (cpu.syn.v,115176|46): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115176, file: cpu_tb.v line 15)
+        wbyteen3), .(regwren2), .(regwren3), .(rwraddrd2), .(rwraddrd3), .(
+                                                            |
+ncvlog: *E,EXPIDN (cpu.syn.v,115176|60): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115176, file: cpu_tb.v line 15)
+        wbyteen3), .(regwren2), .(regwren3), .(rwraddrd2), .(rwraddrd3), .(
+                                                                          |
+ncvlog: *E,EXPIDN (cpu.syn.v,115176|74): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115176, file: cpu_tb.v line 15)
+        reginmuxop2), .(reginmuxop3), .(aluOut), .(aluOut3), .(instruction2), 
+                       |
+ncvlog: *E,EXPIDN (cpu.syn.v,115177|23): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115177, file: cpu_tb.v line 15)
+        reginmuxop2), .(reginmuxop3), .(aluOut), .(aluOut3), .(instruction2), 
+                                       |
+ncvlog: *E,EXPIDN (cpu.syn.v,115177|39): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115177, file: cpu_tb.v line 15)
+        reginmuxop2), .(reginmuxop3), .(aluOut), .(aluOut3), .(instruction2), 
+                                                  |
+ncvlog: *E,EXPIDN (cpu.syn.v,115177|50): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115177, file: cpu_tb.v line 15)
+        reginmuxop2), .(reginmuxop3), .(aluOut), .(aluOut3), .(instruction2), 
+                                                              |
+ncvlog: *E,EXPIDN (cpu.syn.v,115177|62): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115177, file: cpu_tb.v line 15)
+        .(instruction3), .(clk), .(reset) );
+         |
+ncvlog: *E,EXPIDN (cpu.syn.v,115178|9): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115178, file: cpu_tb.v line 15)
+        .(instruction3), .(clk), .(reset) );
+                          |
+ncvlog: *E,EXPIDN (cpu.syn.v,115178|26): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115178, file: cpu_tb.v line 15)
+        .(instruction3), .(clk), .(reset) );
+                                  |
+ncvlog: *E,EXPIDN (cpu.syn.v,115178|34): expecting an identifier [12.3.4(IEEE)].
+(`include file: cpu.syn.v line 115178, file: cpu_tb.v line 15)
+	module worklib.cpu:v
+		errors: 44, warnings: 0
+ncvlog: *W,LIBNOU: Library "cpu.v" given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+ncverilog: *E,VLGERR: Error during parsing (status 1), exiting.
+TOOL:	ncverilog	05.10-p004: Exiting on Dec 13, 2007 at 23:24:28  (total: 00:00:17)

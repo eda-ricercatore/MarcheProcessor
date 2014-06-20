@@ -1,0 +1,105 @@
+(DELAYFILE
+(SDFVERSION "OVI 2.1")
+(DESIGN "seq_detect")
+(DATE "Fri Nov 16 08:23:44 2007")
+(VENDOR "osu018_stdcells")
+(PROGRAM "Synopsys Design Compiler cmos")
+(VERSION "Y-2006.06-SP4")
+(DIVIDER /)
+(VOLTAGE 1.80:1.80:1.80)
+(PROCESS "typical")
+(TEMPERATURE 25.00:25.00:25.00)
+(TIMESCALE 1ns)
+(CELL
+  (CELLTYPE "seq_detect")
+  (INSTANCE)
+  (DELAY
+    (ABSOLUTE
+    (INTERCONNECT state_reg_1_/Q U77/A (0.000:0.000:0.000))
+    (INTERCONNECT state_reg_0_/Q U77/B (0.000:0.000:0.000))
+    (INTERCONNECT state_reg_1_/Q U76/A (0.000:0.000:0.000))
+    (INTERCONNECT state_reg_0_/Q U75/A (0.000:0.000:0.000))
+    (INTERCONNECT U76/Y U75/B (0.000:0.000:0.000))
+    (INTERCONNECT rst U74/A (0.000:0.000:0.000))
+    (INTERCONNECT in U74/B (0.000:0.000:0.000))
+    (INTERCONNECT rst state_reg_1_/D (0.000:0.000:0.000))
+    (INTERCONNECT clk state_reg_1_/CLK (0.000:0.000:0.000))
+    (INTERCONNECT U74/Y state_reg_0_/D (0.000:0.000:0.000))
+    (INTERCONNECT clk state_reg_0_/CLK (0.000:0.000:0.000))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "AND2X1")
+  (INSTANCE U77)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH A Y (0.054:0.054:0.054) (0.068:0.068:0.068))
+    (IOPATH B Y (0.055:0.055:0.055) (0.079:0.079:0.079))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "INVX1")
+  (INSTANCE U76)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH A Y (0.058:0.058:0.058) (0.048:0.048:0.048))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "NOR2X1")
+  (INSTANCE U75)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH A Y (0.041:0.041:0.041) (0.044:0.044:0.044))
+    (IOPATH B Y (0.032:0.032:0.032) (0.028:0.028:0.028))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "OR2X1")
+  (INSTANCE U74)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH A Y (0.073:0.073:0.073) (0.075:0.075:0.075))
+    (IOPATH B Y (0.080:0.080:0.080) (0.084:0.084:0.084))
+    )
+  )
+)
+(CELL
+  (CELLTYPE "DFFPOSX1")
+  (INSTANCE state_reg_1_)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH (posedge CLK) Q (0.106:0.106:0.106) (0.178:0.178:0.178))
+    )
+  )
+  (TIMINGCHECK
+    (WIDTH (posedge CLK) (0.107:0.107:0.107))
+    (WIDTH (negedge CLK) (0.099:0.099:0.099))
+    (HOLD (posedge D) (posedge CLK) (0.000:0.000:0.000))
+    (HOLD (negedge D) (posedge CLK) (-0.105:-0.105:-0.105))
+    (SETUP (posedge D) (posedge CLK) (0.199:0.199:0.199))
+    (SETUP (negedge D) (posedge CLK) (0.164:0.164:0.164))
+  )
+)
+(CELL
+  (CELLTYPE "DFFPOSX1")
+  (INSTANCE state_reg_0_)
+  (DELAY
+    (ABSOLUTE
+    (IOPATH (posedge CLK) Q (0.111:0.111:0.111) (0.184:0.184:0.184))
+    )
+  )
+  (TIMINGCHECK
+    (WIDTH (posedge CLK) (0.107:0.107:0.107))
+    (WIDTH (negedge CLK) (0.099:0.099:0.099))
+    (HOLD (posedge D) (posedge CLK) (0.002:0.002:0.002))
+    (HOLD (negedge D) (posedge CLK) (-0.098:-0.097:-0.097))
+    (SETUP (posedge D) (posedge CLK) (0.192:0.191:0.191))
+    (SETUP (negedge D) (posedge CLK) (0.162:0.162:0.162))
+  )
+)
+)

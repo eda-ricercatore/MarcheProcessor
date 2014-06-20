@@ -1,0 +1,76 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu
+Version: Y-2006.06-SP4
+Date   : Tue Dec  4 00:19:06 2007
+****************************************
+
+Operating Conditions: typical   Library: osu018_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: alu_op[2] (input port)
+  Endpoint: result[64] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  alu_op[2] (in)                                          0.00       0.00 r
+  U926/Y (INVX4)                                          0.56       0.56 f
+  U1749/Y (NOR2X1)                                        0.79       1.35 r
+  U1563/Y (INVX1)                                         0.51       1.86 f
+  U925/Y (INVX4)                                          0.88       2.74 r
+  U1706/Y (OR2X1)                                         0.69       3.42 r
+  U1332/Y (AOI22X1)                                       0.15       3.57 f
+  U1331/Y (OAI21X1)                                       0.25       3.83 r
+  r438/a[1] (alu_DW_mult_uns_4)                           0.00       3.83 r
+  r438/U649/Y (BUFX2)                                     0.34       4.16 r
+  r438/U79/Y (XNOR2X1)                                    0.16       4.33 r
+  r438/U94/Y (OAI22X1)                                    0.08       4.41 f
+  r438/U523/YC (HAX1)                                     0.20       4.60 f
+  r438/U524/YC (FAX1)                                     0.22       4.83 f
+  r438/U525/YC (FAX1)                                     0.21       5.04 f
+  r438/U526/YC (FAX1)                                     0.21       5.26 f
+  r438/U527/YC (FAX1)                                     0.21       5.47 f
+  r438/U528/YC (FAX1)                                     0.21       5.68 f
+  r438/U529/YC (FAX1)                                     0.21       5.90 f
+  r438/U530/YC (FAX1)                                     0.21       6.11 f
+  r438/U531/YC (FAX1)                                     0.21       6.32 f
+  r438/U532/YC (FAX1)                                     0.21       6.54 f
+  r438/U533/YC (FAX1)                                     0.21       6.75 f
+  r438/U534/YC (FAX1)                                     0.21       6.96 f
+  r438/U535/YC (FAX1)                                     0.21       7.18 f
+  r438/U536/YC (FAX1)                                     0.21       7.39 f
+  r438/U537/YC (FAX1)                                     0.21       7.60 f
+  r438/U538/YC (FAX1)                                     0.21       7.82 f
+  r438/U539/YC (FAX1)                                     0.21       8.03 f
+  r438/U540/YC (FAX1)                                     0.21       8.24 f
+  r438/U541/YC (FAX1)                                     0.21       8.46 f
+  r438/U542/YC (FAX1)                                     0.21       8.67 f
+  r438/U543/YC (FAX1)                                     0.21       8.88 f
+  r438/U544/YC (FAX1)                                     0.21       9.10 f
+  r438/U545/YC (FAX1)                                     0.21       9.31 f
+  r438/U546/YC (FAX1)                                     0.21       9.52 f
+  r438/U547/YC (FAX1)                                     0.21       9.74 f
+  r438/U548/YC (FAX1)                                     0.21       9.95 f
+  r438/U549/YC (FAX1)                                     0.21      10.16 f
+  r438/U550/YC (FAX1)                                     0.21      10.38 f
+  r438/U551/YC (FAX1)                                     0.21      10.59 f
+  r438/U552/YC (FAX1)                                     0.19      10.78 f
+  r438/U554/Y (XOR2X1)                                    0.14      10.92 r
+  r438/product[31] (alu_DW_mult_uns_4)                    0.00      10.92 r
+  U1043/Y (AOI22X1)                                       0.08      11.00 f
+  U1042/Y (NAND2X1)                                       0.06      11.06 r
+  result[64] (out)                                        0.00      11.06 r
+  data arrival time                                                 11.06
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
