@@ -1,6 +1,6 @@
 /**
- * This is written by Zhiyang Ong (zhiyango@usc.edu; 6004 9194 12)
- * and Andrew Mattheisen (mattheis@usc.edu; 2134 5147 11)
+ * This is written by Zhiyang Ong
+ * and Andrew Mattheisen
  */
 
 `timescale 1ns/100ps
