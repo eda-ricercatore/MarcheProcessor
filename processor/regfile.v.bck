@@ -1,5 +1,5 @@
 /**
- * This is written by Zhiyang Ong -student number 6004 9194 12-
+ * This is written by Zhiyang Ong 
  * for EE577b Homework 4, Question 4
  */
 
