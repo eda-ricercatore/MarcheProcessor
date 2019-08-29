@@ -1,6 +1,6 @@
 /**
  * This is written by Zhiyang Ong 
- * and Andrew Mattheisen (mattheis@usc.edu; 2134 5147 11)
+ * and Andrew Mattheisen
  * for EE577b Troy WideWord Processor Project
  *
  *
