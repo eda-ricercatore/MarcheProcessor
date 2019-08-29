@@ -1,5 +1,5 @@
-// zhiyang ong zhiyang.ong@gmail.com
-// andrew mattheisen amattheisen@gmail.com
+// zhiyang ong 
+// andrew mattheisen
 
 // The next line is only used for module synthesis
 //`include "~/ee577b/syn/src/control.h"

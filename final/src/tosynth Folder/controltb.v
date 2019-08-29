@@ -1,5 +1,5 @@
-// zhiyang ong zhiyang.ong@gmail.com
-// andrew mattheisen amattheisen@gmeil.com
+// zhiyang ong
+// andrew mattheisen
 
 `timescale 1ns/10ps
 `include "control.h"

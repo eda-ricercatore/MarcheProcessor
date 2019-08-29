@@ -1,5 +1,5 @@
-// zhiyang ong zhiyang.ong@gmail.com
-// andrew mattheisen amattheisen@yahoo.com
+// zhiyang ong 
+// andrew mattheisen
 
 module mux128(ina, inb, out, sel);
     //INPUTS
