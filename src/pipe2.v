@@ -1,5 +1,5 @@
-// Zhiyang Ong (zhiyango@usc.edu; 6004 9194 12)
-//  Andrew Mattheisen (mattheis@usc.edu; 2134 5147 11)
+// Zhiyang Ong 
+//  Andrew Mattheisen
 // EE577b Troy WideWord Processor Project
 
 

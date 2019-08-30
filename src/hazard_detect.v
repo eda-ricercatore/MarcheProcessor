@@ -1,5 +1,5 @@
-// Zhiyang Ong zhiyang.ong@gmail.com
-// Andrew Mattheisen amattheisen@yahoo.com
+// Zhiyang Ong
+// Andrew Mattheisen
 // hazard_detect.v
 
 

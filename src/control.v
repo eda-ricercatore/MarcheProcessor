@@ -1,5 +1,5 @@
-// zhiyang ong zhiyang.ong@gmail.com
-// andrew mattheisen amattheisen@gmail.com
+// zhiyang ong 
+// andrew mattheisen
 
 
 module control(instr, 
