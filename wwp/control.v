@@ -1,5 +1,5 @@
-// zhiyang ong zhiyang.ong@gmail.com
-// andrew mattheisen amattheisen@gmail.com
+// zhiyang ong 
+// andrew mattheisen
 
 //`include "control.h" 
 // this statement is for ncverilog only
